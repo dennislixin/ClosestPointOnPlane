@@ -12,20 +12,20 @@ public class ClosestPairPoint
 {
   public static void main(String[] args)
   {
-    // List<Point> points1 = generatePoints(0, 5, 2);
-    // test(points1);
-    //
-    // List<Point> points2 = generatePoints(0, 5, 3);
-    // test(points2);
-    //
-    // List<Point> points3 = generatePoints(0, 5, 4);
-    // test(points3);
+    List<Point> points1 = generatePoints(0, 5, 2);
+    test(points1);
 
-    //List<Point> points4 = generatePoints(-5, 5, 10);
-    // System.out.println("Point List:");
-    // System.out.println(Arrays.toString(points4.toArray()));
+    List<Point> points2 = generatePoints(0, 5, 3);
+    test(points2);
 
-    //test(points4);
+    List<Point> points3 = generatePoints(0, 5, 4);
+    test(points3);
+
+    List<Point> points4 = generatePoints(-5, 5, 10);
+    System.out.println("Point List:");
+    System.out.println(Arrays.toString(points4.toArray()));
+
+    test(points4);
     List<Point> points5 = generatePoints(-100000, 1000000, 10000);
     test(points5);
   }
@@ -170,12 +170,6 @@ public class ClosestPairPoint
     List<Point> pointSortedByY = new ArrayList<>(points);
     sortByX(points);
     sortByY(pointSortedByY);
-
-    // System.out.println("Points sorted by X axis");
-    // System.out.println(Arrays.toString(points.toArray()));
-    // System.out.println("Points sorted by Y axis");
-    // System.out.println(Arrays.toString(pointSortedByY.toArray()));
-
     return divideAndConquer(points, pointSortedByY);
   }
 
@@ -238,7 +232,6 @@ public class ClosestPairPoint
       Pair closestPairSplit = findCloestPointInStrip(tempList, closestPair.getDistance());
       if( closestPairSplit != null && closestPair.getDistance() > closestPairSplit.getDistance())
         closestPair = closestPairSplit;
-
     }
     return closestPair;
   }
